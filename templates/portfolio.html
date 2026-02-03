@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio - Sravanthi Gadida{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>SRAVANTHI GADIDA</h1>
+        <p class="breadcrumb">Home > Portfolio</p>
+    </div>
+</div>
+
+<section class="resume-section">
+    <div class="container resume-card">
+        <p class="contact">Sathupally, Telangana, India | +91 8341428691 | sravanthisravya615@gmail.com</p>
+        <p class="contact-links">GitHub: <a href="https://github.com/sravanthisravya615" target="_blank">github.com/sravanthisravya615</a> | LinkedIn: <a href="https://linkedin.com/in/sravanthisravya615" target="_blank">linkedin.com/in/sravanthisravya615</a></p>
+
+        <div class="section-block">
+            <h2>Professional Summary</h2>
+            <p>Motivated B.Tech student specializing in Computer Science (AI &amp; ML) with a strong foundation in programming, data structures, and web technologies. Quick learner with good problem-solving skills and a keen interest in software development and emerging technologies.</p>
+        </div>
+
+        <div class="section-block">
+            <h2>Education</h2>
+            <ul class="simple-list">
+                <li><strong>B.Tech – CSE (AI &amp; ML)</strong>, Mother Teresa Institute of Science &amp; Technology, Sathupally — CGPA: 8.5 (2022 – Present)</li>
+                <li><strong>Intermediate (MPC)</strong>, Government Junior College, Mulakalapally — 91.2% (2020 – 2022)</li>
+                <li><strong>SSC (10th)</strong>, TSSWRIES (G), Mulakalapally — CGPA: 9.7 (2020)</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill">Core Java</span>
+                <span class="skill">C (Basics)</span>
+                <span class="skill">Python (Basics)</span>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Data Structures &amp; Algorithms</span>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2>Academic Projects</h2>
+            <div class="project-entry">
+                <h3>Calgary Crime Analysis Using Neural Network Models</h3>
+                <p>Analyzed and predicted crime trends using Calgary city open data (2018–2024). Performed data preprocessing, exploratory analysis, and neural network modeling.</p>
+            </div>
+            <div class="project-entry">
+                <h3>Personal Expense Tracking System</h3>
+                <p>Designed a system to track and categorize personal expenses. Implemented user registration, category management, and daily/monthly/yearly reports using DBMS.</p>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2>Certifications</h2>
+            <ul class="simple-list">
+                <li>Java Fundamentals Essentials – Infosys &amp; Springboard</li>
+                <li>Introduction to Artificial Intelligence – Infosys &amp; Springboard</li>
+                <li>Python Certification – Springboard</li>
+                <li>NPTEL – Data Structures and Algorithms Using Java</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>Soft Skills</h2>
+            <p>Communication &amp; Collaboration, Problem Solving, Adaptability, Time Management, Leadership</p>
+        </div>
+
+        <div class="section-block">
+            <h2>Declaration</h2>
+            <p>I hereby declare that the above information is true and correct to the best of my knowledge.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function filterProjects(category) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-card-large');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    projects.forEach(project => {
+        if (category === 'all') {
+            project.style.display = 'block';
+        } else {
+            project.style.display = project.dataset.category.includes(category) ? 'block' : 'none';
+        }
+    });
+}
+</script>
+{% endblock %}

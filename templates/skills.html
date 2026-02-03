@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Skills - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>My Skills</h1>
+        <p class="breadcrumb">Home > Skills</p>
+    </div>
+</div>
+
+<section class="skills-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Technical Expertise</h2>
+            <p class="section-subtitle">Technologies and tools I specialize in</p>
+        </div>
+        
+        <div class="skills-grid-detailed">
+            {% for category, skill_list in skills.items() %}
+            <div class="skill-category-card">
+                <h3 class="category-title">{{ category }}</h3>
+                <div class="skill-items-grid">
+                    {% for skill in skill_list %}
+                    <div class="skill-item-detailed">
+                        <div class="skill-icon">⭐</div>
+                        <p>{{ skill }}</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: {{ 70 + loop.index * 5 }}%"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="proficiency-section">
+    <div class="container">
+        <h2 class="section-title">Proficiency Levels</h2>
+        
+        <div class="proficiency-grid">
+            <div class="proficiency-card">
+                <h3>Strong Foundation</h3>
+                <ul class="proficiency-list">
+                    <li>Core Java</li>
+                    <li>Data Structures & Algorithms</li>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            
+            <div class="proficiency-card">
+                <h3>In Progress</h3>
+                <ul class="proficiency-list">
+                    <li>Python (Basics)</li>
+                    <li>Machine Learning</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Neural Networks</li>
+                </ul>
+            </div>
+            
+            <div class="proficiency-card">
+                <h3>Core Competencies</h3>
+                <ul class="proficiency-list">
+                    <li>Problem Solving</li>
+                    <li>OOPs Concepts</li>
+                    <li>SDLC Understanding</li>
+                    <li>Database Design</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="certifications-section">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        
+        <div class="certifications-grid">
+            <div class="certification-card">
+                <h3>Java Fundamentals Essentials</h3>
+                <p><strong>Infosys & Springboard</strong></p>
+                <p class="cert-detail">Comprehensive Java fundamentals and object-oriented programming concepts</p>
+            </div>
+            
+            <div class="certification-card">
+                <h3>Introduction to Artificial Intelligence</h3>
+                <p><strong>Infosys & Springboard</strong></p>
+                <p class="cert-detail">AI fundamentals, machine learning basics, and neural networks</p>
+            </div>
+            
+            <div class="certification-card">
+                <h3>Python Certification</h3>
+                <p><strong>Springboard</strong></p>
+                <p class="cert-detail">Python programming language fundamentals and applications</p>
+            </div>
+            
+            <div class="certification-card">
+                <h3>NPTEL – Data Structures and Algorithms Using Java</h3>
+                <p><strong>NPTEL (IIT)</strong></p>
+                <p class="cert-detail">Advanced data structures, algorithms, and their implementations</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tools-section">
+    <div class="container">
+        <h2 class="section-title">Tools & Platforms</h2>
+        
+        <div class="tools-grid">
+            <div class="tool-item">
+                <h4>Programming Languages</h4>
+                <p>Core Java, C (Basics), Python (Basics)</p>
+            </div>
+            <div class="tool-item">
+                <h4>Web Technologies</h4>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <div class="tool-item">
+                <h4>Database Management</h4>
+                <p>SQL, Database Design & Implementation</p>
+            </div>
+            <div class="tool-item">
+                <h4>Development Tools</h4>
+                <p>VS Code, IDE, Command Line Tools</p>
+            </div>
+            <div class="tool-item">
+                <h4>Data Science</h4>
+                <p>Data Preprocessing, Neural Networks, Model Analysis</p>
+            </div>
+            <div class="tool-item">
+                <h4>Soft Skills</h4>
+                <p>Problem Solving, Communication, Leadership, Time Management</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
